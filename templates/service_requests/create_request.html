@@ -1,0 +1,18 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+  <h1>Create Service Request</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="request_type">Request Type:</label>
+    <select id="request_type" name="request_type">
+
+      <option value="gas">Gas</option>
+    </select>
+    <br>
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+    <br>
+    <button type="submit">Create Request</button>
+  </form>
+{% endblock %}

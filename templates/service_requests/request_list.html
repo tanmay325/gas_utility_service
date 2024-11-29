@@ -1,0 +1,23 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+  <h1>Service Request List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Request Type</th>
+        <th>Description</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in requests %}
+        <tr>
+          <td>{{ request.request_type }}</td>
+          <td>{{ request.description }}</td>
+          <td>{{ request.created_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

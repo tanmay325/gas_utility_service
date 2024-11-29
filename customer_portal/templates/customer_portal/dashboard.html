@@ -1,0 +1,15 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+<h1>Welcome to Your Dashboard</h1>
+<div class="dashboard-content">
+    <div class="quick-actions">
+        <h2>Quick Actions</h2>
+        <a href="{% url 'create_request' %}" class="btn btn-primary">New Service Request</a>
+        <a href="{% url 'request_list' %}" class="btn btn-secondary">View My Requests</a>
+        {% if service_request.id %}
+            <a href="{% url 'track_request' request_id=service_request.id %}">Track Request</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

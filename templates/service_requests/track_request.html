@@ -1,0 +1,17 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+  <h1>Track Request</h1>
+  <p>Request Type: {{ service_request.request_type }}</p>
+  <p>Customer: {{ service_request.customer.username }}</p>
+  <p>Description: {{ service_request.description }}</p>
+  <p>Status: {{ service_request.status }}</p>
+  <p>Created At: {{ service_request.created_at }}</p>
+  <p>Updated At: {{ service_request.updated_at }}</p>
+  {% if service_request.resolved_at %}
+    <p>Resolved At: {{ service_request.resolved_at }}</p>
+  {% endif %}
+  {% if service_request.attachment %}
+    <p>Attachment: <a href="{{ service_request.attachment.url }}">{{ service_request.attachment.name }}</a></p>
+  {% endif %}
+{% endblock %}
